@@ -1,0 +1,37 @@
+<%= form_for @face, html: { multipart: true }  do |f| %>  
+<% if @face.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@face.errors.count, "error") %> prohibited this face from being saved:</h2>
+
+      <ul>
+      <% @face.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :elo_rating %><br>
+    <%= f.text_field :elo_rating %>
+  </div>
+  <div class="field">
+    <%= f.label :won %><br>
+    <%= f.number_field :won %>
+  </div>
+  <div class="field">
+    <%= f.label :lost %><br>
+    <%= f.number_field :lost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

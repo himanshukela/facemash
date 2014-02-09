@@ -1,0 +1,50 @@
+<table>
+<tbody>
+    <% @faces.each do |face| %>
+      <tr>
+        <td><%= face.name %></td>
+        <td><%= image_tag(face.image_url, :width=>"400px", :id => face.id , :class => "my_face") %></td>
+        <td><%= face.elo_rating %></td>
+        <td><%= face.won %></td>
+        <td><%= face.lost %></td>
+        <td><%= link_to 'Show', face %></td>
+        <td><%= link_to 'Edit', edit_face_path(face) %></td>
+        <td><%= link_to 'Destroy', face, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= form_tag do %>
+
+<%= hidden_field_tag("face1", @face_1.id) %>
+
+<%= hidden_field_tag("face2", @face_2.id) %>
+
+<%= hidden_field_tag("selection") %>
+
+
+
+<script type='text/javascript'>
+
+$(document).ready(function(){
+
+		$(".my_face").click(function(){
+
+			$("#selection").value=$(this).attr("id");
+
+			$("form").submit();
+
+			});
+
+		});
+
+</script>
+
+
+
+<% end %>
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+<title>Facemash</title>
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+
+<div id="user_nav">
+<% if current_user %>
+	<%= image_tag(current_user.image, :width=>"50px") %> </br></br> 
+	Signed in as <strong><%= current_user.name %></strong>!</br></br>
+	First name ---- <strong><%= current_user.first_name %></strong> </br></br>
+	Last name  ---- <strong><%= current_user.last_name %></strong> </br></br>
+	Gender   ---- <strong><%= current_user.gender %></strong> </br></br>
+	Email ---- <strong><%= current_user.email %></strong> </br></br>
+	Location ---- <strong><%= current_user.location %></strong> </br></br>
+	Locale ---- <strong><%= current_user.locale %></strong> </br></br>
+	Timezone ---- <strong><%= current_user.timezone %></strong> </br></br>
+	link ---- <strong><%= current_user.link %></strong> </br></br>
+
+
+	 <strong><%= friends %></strong> </br></br>
+
+
+</br></br></br>	
+ <%= link_to "Sign out", signout_path, id: "sign_out" %>
+
+<% end %>
+</div>
+
+
+
+
+<%= yield %>
+
+</body>
+</html>

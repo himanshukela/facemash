@@ -1,0 +1,35 @@
+<h1>Listing faces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Elo rating</th>
+      <th>Won</th>
+      <th>Lost</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @faces.each do |face| %>
+      <tr>
+        <td><%= face.name %></td>
+        <td><%= image_tag(face.image_url, :width=>"400px") %></td>
+        <td><%= face.elo_rating %></td>
+        <td><%= face.won %></td>
+        <td><%= face.lost %></td>
+        <td><%= link_to 'Show', face %></td>
+        <td><%= link_to 'Edit', edit_face_path(face) %></td>
+        <td><%= link_to 'Destroy', face, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Face', new_face_path %>

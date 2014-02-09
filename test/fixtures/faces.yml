@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  image: MyString
+  elo_rating: 1.5
+  won: 1
+  lost: 1
+
+two:
+  name: MyString
+  image: MyString
+  elo_rating: 1.5
+  won: 1
+  lost: 1

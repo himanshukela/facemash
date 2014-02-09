@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @face.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+ <%= image_tag(@face.image_url, :width=>"400px") %> 
+</p>
+
+<p>
+  <strong>Elo rating:</strong>
+  <%= @face.elo_rating %>
+</p>
+
+<p>
+  <strong>Won:</strong>
+  <%= @face.won %>
+</p>
+
+<p>
+  <strong>Lost:</strong>
+  <%= @face.lost %>
+</p>
+
+<%= link_to 'Edit', edit_face_path(@face) %> |
+<%= link_to 'Back', faces_path %>
